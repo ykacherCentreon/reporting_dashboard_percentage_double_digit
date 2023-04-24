@@ -179,8 +179,20 @@
                     'Undetermined' : '#{/literal}{$colors.undetermined}{literal}'
                 }
             },
-            size: {
-                height: 200,
+            pie: {
+        	label: {
+            		format: function (value, ratio, id) {
+                	return d3.format('0.2f')(ratio*100)+"%";
+            		}
+        	}	
+    	},
+	tooltip: {
+  		format: {
+    			value: function (value, ratio, id, index) { return d3.format('0.2f')(ratio*100)+"%"; }
+  		}
+	},
+	size: {
+        	height: 200,
                 width: 350
             }
         });
